@@ -40,39 +40,41 @@
         <form>
           <!-- First name -->
           <div id="first-name-box">
-            <input type="text" id="first-name" placeholder="First Name">
+            <input type="text" id="first-name" placeholder="First Name" autocomplete="off" name="first-name">
             <img src="images/icon-error.svg" alt="Error icon" id="first-name-error-icon" class="error-icon hide">
           </div>
-          <p id="last-name-error-message" class="error-message hide">
+          <p id="first-name-error-message" class="error-message hide">
             First Name cannot be empty
           </p>
 
           <!-- Last name -->
           <div id="last-name-box">
-            <input type="text" id="last-name" placeholder="Last Name">
+            <input type="text" id="last-name" placeholder="Last Name" autocomplete="off" name="last-name">
             <img src="images/icon-error.svg" alt="Error icon" id="last-name-error-icon" class="error-icon hide">
           </div>
-          <p id="first-name-error-message" class="error-message hide">
+          <p id="last-name-error-message" class="error-message hide">
             Last Name cannot be empty
           </p>
 
           <!-- Email -->
           <div id="email-box">
-            <input type="text" id="email" placeholder="Email" autocomplete="off">
+            <input type="text" id="email" placeholder="Email" autocomplete="off" name="email">
             <img src="images/icon-error.svg" alt="Error icon" id="email-error-icon" class="error-icon hide">
           </div>
-          <p id="first-name-error-message" class="error-message hide">
+          <p id="email-error-message" class="error-message hide">
             Looks like this is not an email
           </p>
 
           <!-- Password -->
           <div id="password-box">
-            <input type="password" id="password" placeholder="Password">
+            <input type="password" id="password" placeholder="Password" autocomplete="off" name="password">
             <img src="images/icon-error.svg" alt="Error icon" id="password-error-icon" class="error-icon hide">
           </div>
-          <p id="first-name-error-message" class="error-message hide">
+          <p id="password-error-message" class="error-message hide">
             Password cannot be empty
           </p>
+
+          <!-- Submit button -->
           <input type="submit" id="submit-btn" value="CLAIM YOUR FREE TRIAL">
         </form>
         
@@ -83,5 +85,6 @@
     </section>
   </main>
 
+  <script src="index.js"></script>
 </body>
 </html>
