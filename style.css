@@ -80,6 +80,10 @@ main {
   width: 100%;
 }
 
+#form-box > form > input:focus {
+  outline: 1px solid var(--blue-purple);
+}
+
 /* Submit button */
 #form-box > form > input[type="submit"] {
   background-color: var(--green);
@@ -89,9 +93,15 @@ main {
   letter-spacing: 1px;
   margin-bottom: 0.5rem;
   padding: 1rem 0;
+  transition: all 200ms ease-in-out;
+}
+
+#form-box > form > input[type="submit"]:focus {
+  outline: none;
 }
 
 #form-box > form > input[type="submit"]:hover {
+  background-color: hsl(154, 65%, 68%);
   cursor: pointer;
 }
 
@@ -109,4 +119,73 @@ main {
 
 #form-box > p > span:hover {
   cursor: pointer;
+}
+
+/* Desktop design */
+@media (min-width: 1200px) {
+  body {
+    align-items: center;
+    background-image: url(images/bg-intro-desktop.png);
+    display: flex;
+  }
+  
+  main {
+    flex-direction: row;
+    margin: 5rem auto;
+    max-width: 1400px;
+    padding: 0 10rem;
+  }
+  
+  /* Text section */
+  #text-content-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 1.375rem 0 0;
+    text-align: start;
+    width: 50%;
+  }
+  
+  #text-content-section>h1 {
+    font-size: 3.125rem;
+    letter-spacing: -0.52px;
+    line-height: 3.4375rem;
+    margin-bottom: 0.6875rem;
+  }
+  
+  /* Free trial section */
+  #free-trial-section {
+    margin-left: 1.375rem;
+    width: 50%;
+  }
+  
+  #free-trial-ad {
+    background-color: var(--blue-purple);
+    color: white;
+    letter-spacing: 0.27px;
+    margin-bottom: 1.5rem;
+    padding: 1.125rem 20%;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+  }
+  
+  #free-trial-ad>span {
+    font-weight: 700;
+  }
+  
+  /* Form section */
+  #form-box {
+    padding: 2.5rem;
+  }
+  
+  /* Input fields */
+  #form-box>form>input {
+    margin-bottom: 1.25rem;
+    padding: 1rem 0 1rem 2rem;
+  }
+  
+  /* Submit button */
+  #form-box>form>input[type="submit"] {
+    margin-bottom: 0.5rem;
+  }
 }
