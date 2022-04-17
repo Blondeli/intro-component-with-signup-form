@@ -16,8 +16,13 @@ function displayErrorMessage(event) {
 
   // Check Email
   let email = document.querySelector("form").elements["email"].value;
-  if ((email.length === 0) || (!(email.includes("@")))) {
+  let emailNotValid;
+  if (email.length === 0) {
     errorArray.push("email");
+    emailNotValid = false;
+  } else if (!(email.toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/))) {
+    errorArray.push("email");
+    emailNotValid = true;
   } else {
     correctArray.push("email");
   }
@@ -35,6 +40,15 @@ function displayErrorMessage(event) {
     // Color input field border
     let inputField = document.querySelector(`#${element}`);
     inputField.style.border = "1px solid red";
+
+    // Change email error message depending on type of error
+    if (element === "email") {
+      if (emailNotValid) {
+        errorMessage.innerHTML = "Looks like this is not an email";
+      } else {
+        errorMessage.innerHTML = "Email cannot be empty";
+      }
+    }
   });
 
   // Hide error messages and icons if input is correct
